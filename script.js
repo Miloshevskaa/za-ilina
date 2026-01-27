@@ -47,13 +47,4 @@ function moveNoButton() {
     noBtn.style.transform = `translate(${x}px, ${y}px) scale(${noScale})`;
 }
 
-yesBtn.addEventListener("click", () => {
-    message.textContent = "YAYYY!! 💖💖💖";
-
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-
-    setTimeout(() => {
-        window.location.href = "https://www.instagram.com/TVOETO_KORISNICKO/";
-    }, 1000);
-});
+yesBtn.addEventListener("click", () => { message.textContent = "YAYYY!! 💖💖💖"; yesBtn.style.display = "none"; noBtn.style.display = "none"; });
