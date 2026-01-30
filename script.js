@@ -9,7 +9,7 @@
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease, left 0.2s ease, top 0.2s ease;
-    position: absolute; /* so we can move it anywhere */
+    position: absolute;
   }
   #message {
     font-size: 24px;
@@ -26,7 +26,7 @@ let noClicks = 0;
 let yesScale = 1;
 let noScale = 1;
 
-// Position buttons initially
+// Initial positions
 yesBtn.style.left = "100px";
 yesBtn.style.top = "100px";
 noBtn.style.left = "300px";
@@ -57,10 +57,18 @@ noBtn.addEventListener("click", () => {
     } 
     else if (noClicks === 5) {
         noBtn.textContent = "Last chance 😭";
-    } 
+
+        // Make sure button can move
+        noBtn.style.position = "absolute";
+
+        // Lock current position to left/top so movement works
+        const rect = noBtn.getBoundingClientRect();
+        noBtn.style.left = rect.left + "px";
+        noBtn.style.top = rect.top + "px";
+    }
 });
 
-// Make No button run away from cursor after 5 clicks
+// Run away behavior after 5 clicks
 document.addEventListener("mousemove", (e) => {
     if (noClicks < 5) return;
 
@@ -74,10 +82,10 @@ document.addEventListener("mousemove", (e) => {
     const dy = btnY - mouseY;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    // Move only if cursor is close
-    if (distance < 150) {
-        const moveX = (dx / distance) * 100; // scale movement
-        const moveY = (dy / distance) * 100;
+    // Move if cursor is close
+    if (distance < 200) { // a bit larger radius for easier dodging
+        const moveX = (dx / distance) * 120; // how fast it moves
+        const moveY = (dy / distance) * 120;
 
         let newX = rect.left + moveX;
         let newY = rect.top + moveY;
