@@ -18,21 +18,13 @@ noBtn.addEventListener("click", () => {
     } 
     else if (noClicks === 3) {
         noBtn.textContent = "Think again 😳";
-
         yesScale += 0.3;
         noScale -= 0.2;
-
-        yesBtn.style.transform = `scale(${yesScale})`;
-        noBtn.style.transform = `scale(${noScale})`;
     } 
     else if (noClicks === 4) {
         noBtn.textContent = "Don’t do this 😭";
-
         yesScale += 0.4;
         noScale -= 0.3;
-
-        yesBtn.style.transform = `scale(${yesScale})`;
-        noBtn.style.transform = `scale(${noScale})`;
     } 
     else if (noClicks === 5) {
         noBtn.textContent = "Last chance 😭";
@@ -40,6 +32,9 @@ noBtn.addEventListener("click", () => {
     else {
         moveNoButton();
     }
+
+    yesBtn.style.transform = `scale(${yesScale})`;
+    noBtn.style.transform = `scale(${noScale})`;
 });
 
 function moveNoButton() {
@@ -50,8 +45,8 @@ function moveNoButton() {
 
 yesBtn.addEventListener("click", () => {
     message.textContent = "YAYYY!! 💖💖💖";
-
     question.style.display = "none";
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
 });
+
