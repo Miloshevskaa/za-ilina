@@ -14,31 +14,37 @@ body {
 
 .container {
     background: white;
-    padding: 60px 80px;   /* повеќе простор лево/десно */
-    border-radius: 25px;
+    padding: 60px 80px;       /* повеќе простор лево/десно */
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-    max-width: 900px;      /* доста пошироко */
-    min-height: 450px;     /* повеќе простор за копчињата */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    max-width: 900px;         /* поширок контенер за еден ред */
+    min-width: 600px;
+    min-height: 450px;        /* повеќе простор за копчињата */
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    font-size: 2.5rem;    /* помалку зголемено, за да стане во еден ред */
+    font-size: 2.3rem;        /* малку помал за еден ред */
     margin-bottom: 50px;
-    white-space: nowrap;   /* секогаш во еден ред */
+    white-space: nowrap;       /* текстот никогаш не се крши */
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 60px;             /* повеќе растојание помеѓу копчињата */
-    margin-top: 50px;
+    gap: 60px;                /* повеќе растојание помеѓу копчињата */
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
 }
 
 button {
-    font-size: 1.4rem;
-    padding: 18px 35px;    /* поголеми копчиња */
+    font-size: 1.5rem;
+    padding: 18px 35px;       /* поголеми копчиња за удобност */
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -51,15 +57,17 @@ button {
     color: white;
 }
 
+#yesBtn:hover {
+    transform: scale(1.2);
+}
+
 #noBtn {
-    background-color: #e0e0e0;
+    background-color: #ddd;
     color: black;
 }
 
 #message {
-    margin-top: 30px;
+    margin-top: 35px;
     font-size: 1.6rem;
     color: #ff4d6d;
 }
-
-
