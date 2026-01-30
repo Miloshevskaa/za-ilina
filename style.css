@@ -1,75 +1,62 @@
 * {
     box-sizing: border-box;
-    font-family: "Poppins", Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 body {
     margin: 0;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* CARD */
-.card {
-    background: #ffffff;
-    padding: 56px 72px;
-    border-radius: 28px;
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-    max-width: 720px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-/* QUESTION */
 h1 {
-    font-size: 40px;
-    margin-bottom: 48px;
-    color: #000;
-    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
 }
 
-/* BUTTON CONTAINER */
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
 }
 
-/* BASE BUTTON */
 button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
     border: none;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 20px;
-    padding: 16px 44px;
-    border-radius: 16px; /* matches image */
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-/* YES BUTTON (pink from image) */
 #yesBtn {
-    background-color: #ff5a73;
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(255, 90, 115, 0.35);
+    background-color: #ff4d6d;
+    color: white;
 }
 
-/* NO BUTTON (light grey from image) */
+#yesBtn:hover {
+    transform: scale(1.2);
+}
+
 #noBtn {
-    background-color: #e0e0e0;
-    color: #000000;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #ddd;
+    color: black;
+    position: relative;
 }
 
-/* subtle hover like the image */
-button:hover {
-    transform: scale(1.04);
-}
-
-/* MESSAGE */
 #message {
-    margin-top: 40px;
-    font-size: 34px;
-    font-weight: 600;
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: #ff4d6d;
 }
-
