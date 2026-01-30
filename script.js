@@ -1,6 +1,7 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const message = document.getElementById("message");
+const question = document.getElementById("question");
 
 let noClicks = 0;
 let yesScale = 1;
@@ -47,4 +48,10 @@ function moveNoButton() {
     noBtn.style.transform = `translate(${x}px, ${y}px) scale(${noScale})`;
 }
 
-yesBtn.addEventListener("click", () => { message.textContent = "YAYYY!! 💖💖💖"; yesBtn.style.display = "none"; noBtn.style.display = "none"; });
+yesBtn.addEventListener("click", () => {
+    message.textContent = "YAYYY!! 💖💖💖";
+
+    question.style.display = "none";
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+});
