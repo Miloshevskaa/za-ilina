@@ -2,21 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="style.css">
+    <title>💘</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6eb;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 12px 24px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #message {
+            font-size: 32px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Will you be my Valentine? 💖</h1>
+    <h1 id="question">Will you be my valentine? 💘</h1>
 
-        <div class="buttons">
-            <button id="yesBtn">Yes 💕</button>
-            <button id="noBtn">No 💔</button>
-        </div>
-
-        <p id="message"></p>
+    <div>
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 💔</button>
     </div>
+
+    <div id="message"></div>
 
     <script src="script.js"></script>
 </body>
